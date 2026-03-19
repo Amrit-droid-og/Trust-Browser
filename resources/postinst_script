@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ]; then
+    update-alternatives --install /usr/bin/x-www-browser \
+        x-www-browser /opt/Trust Browser/trustbrowser 80
+    chown root /opt/Trust Browser/chrome-sandbox
+    chmod 4755 /opt/Trust Browser/chrome-sandbox
+    echo "Run sudo xdg-settings set default-web-browser trustbrowser.desktop && sudo update-alternatives --config x-www-browser to set Trust Browser as your default browser."
+    ln -sf /opt/Trust Browser/trustbrowser /usr/bin/trustbrowser
+fi

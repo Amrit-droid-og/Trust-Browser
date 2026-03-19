@@ -1,0 +1,62 @@
+#tab-editor {
+  padding: 0 10px;
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: calc(100% - 12px);
+  display: flex;
+  height: calc(100% - 8px);
+  align-items: center;
+  transform-origin: top left;
+  z-index: 1;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.dark-theme #tab-editor {
+  background: rgba(30, 32, 36, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+#tab-editor-input {
+  font-size: 0.98em;
+  line-height: 2em;
+  background: none;
+  -webkit-appearance: none;
+  border: none;
+  color: inherit;
+  flex: 1;
+  height: 1.5em;
+  outline: none;
+  -webkit-user-select: auto;
+  -webkit-app-region: no-drag;
+  padding: 0 2px;
+}
+#tab-editor-input::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.5;
+  line-height: 1.25em;
+}
+
+#tab-editor .tab-editor-button {
+  padding: 0.4em;
+  margin-top: 0.1em;
+  border-radius: 50%;
+}
+
+#tab-editor .tab-editor-button:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.dark-theme #tab-editor .tab-editor-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#tab-editor
+  .tab-editor-button:not([hidden])
+  + .tab-editor-button:not([hidden]) {
+  margin-left: 0.25em;
+}
