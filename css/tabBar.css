@@ -10,6 +10,8 @@
   padding-top: var(--control-space-top);
   padding-left: var(--control-space-left);
   padding-right: var(--control-space-right);
+  /* Chrome/Brave-like toolbar surface */
+  background: rgba(241, 243, 244, 0.92);
 }
 
 /* when the tab-group is white, we need a line to separate it from the webviews */
@@ -28,6 +30,10 @@
 
 .dark-theme #navbar:before {
   background: rgba(255, 255, 255, 0.15);
+}
+
+.dark-theme #navbar {
+  background: rgba(48, 52, 58, 0.96);
 }
 
 /* navbar buttons */
@@ -91,6 +97,9 @@ body.linux #menu-button {
   flex: 1;
   overflow-x: auto;
   overflow-y: hidden;
+  align-items: flex-end;
+  padding: 4px 6px 0 6px;
+  gap: 6px;
 }
 
 #tabs #tabs-inner.disable-scroll {
@@ -101,8 +110,8 @@ body.linux #menu-button {
   flex: 1;
   min-width: 125px;
   transition: 0.2s transform;
-  line-height: 36px;
-  height: 36px;
+  line-height: 32px;
+  height: 32px;
   overflow: hidden;
   word-break: break-all;
   position: relative;
@@ -111,6 +120,8 @@ body.linux #menu-button {
   gap: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  border-radius: 10px 10px 0 0;
+  background: transparent;
 }
 .tab-item.active {
   min-width: 168px;
@@ -124,7 +135,7 @@ body.linux #menu-button {
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
   background-color: #fff !important;
   color: var(--theme-foreground-color);
-  border-radius: 3px;
+  border-radius: 10px 10px 0 0;
 }
 .tab-item.gu-mirror:before {
   position: absolute;
@@ -160,10 +171,10 @@ body.linux #menu-button {
 }
 
 .tab-item:not(.active):hover {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(255, 255, 255, 0.55);
 }
 .dark-theme .tab-item:not(.active):hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.10);
 }
 .dark-theme.theme-background-low-contrast .tab-item:not(.active):hover {
   background-color: rgba(255, 255, 255, 0.15);
@@ -208,10 +219,16 @@ body:not(.touch)
   background: rgba(255, 255, 255, 0.15);
 }
 .tab-item.active:not(:only-child) {
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.10),
+    0 2px 6px rgba(0, 0, 0, 0.10);
 }
 .dark-theme .tab-item.active:not(:only-child) {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(43, 46, 52, 0.95);
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.35);
 }
 .dark-theme.theme-background-low-contrast .tab-item.active:not(:only-child) {
   background: rgba(255, 255, 255, 0.25);
@@ -288,6 +305,7 @@ body:not(.touch)
   height: 36px;
   margin-top: -0.5px;
   font-size: 1.4em !important;
+  border-radius: 10px;
 }
 body.windows .navbar-action-button:not(:disabled):hover {
   background-color: rgba(0, 0, 0, 0.075);

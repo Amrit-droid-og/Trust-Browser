@@ -1,9 +1,9 @@
 {
-  "name": "min",
-  "productName": "Min",
-  "author": "PalmerAL",
+  "name": "trust-browser",
+  "productName": "Trust Browser",
+  "author": "Amrit-droid-og",
   "version": "1.35.4",
-  "description": "A fast, minimal browser that protects your privacy",
+  "description": "Trust Browser - A professional, minimal browser that protects your privacy",
   "electronVersion": "40.6.1",
   "main": "main.build.js",
   "standard": {
